@@ -9,7 +9,7 @@ resource "random_password" "mysql_admin_password" {
 }
 
 resource "azurerm_resource_group" "resource_group" {
-  name     = module.naming.resource_group_name
+  name     = module.naming.resource_group.name
   location = var.location
 }
 
