@@ -15,3 +15,9 @@ variable "mysql_admin_password_length" {
   type        = number
   default     = 16
 }
+
+variable "mysql_backup_retention_days" {
+  description = "The number of days to retain backups for the MySQL server"
+  type        = number
+  default     = 7
+}
