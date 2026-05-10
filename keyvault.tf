@@ -1,5 +1,5 @@
 resource "azurerm_key_vault" "key_vault" {
-  name                        = module.naming.key_vault.name
+  name                        = module.naming.key_vault.name_unique
   location                    = azurerm_resource_group.resource_group.location
   resource_group_name         = azurerm_resource_group.resource_group.name
   enabled_for_disk_encryption = true

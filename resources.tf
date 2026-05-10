@@ -14,7 +14,7 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 resource "azurerm_mysql_flexible_server" "mysql_flexible_server" {
-  name                   = module.naming.mysql_server.name
+  name                   = module.naming.mysql_server.name_unique
   resource_group_name    = azurerm_resource_group.resource_group.name
   location               = azurerm_resource_group.resource_group.location
   administrator_login    = var.mysql_admin_username
