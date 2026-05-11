@@ -22,7 +22,7 @@ resource "azurerm_mysql_flexible_server" "mysql_flexible_server" {
   backup_retention_days  = var.mysql_backup_retention_days
   version                = "8.4"
   sku_name               = "B_Standard_B1ms"
-  
+
   high_availability {
     mode = "SameZone"
   }
