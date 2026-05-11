@@ -16,3 +16,9 @@ resource "azurerm_key_vault" "key_vault" {
     key_permissions = ["Get", "List", "Create", "Delete", "Update", "Recover", "Purge", "GetRotationPolicy"]
   }
 }
+
+resource "azurerm_key_vault_secret" "database_admin_password" {
+  key_vault_id = azurerm_key_vault.key_vault.id
+  name = "mysql_admin_password"
+  value = random_password.mysql_admin_password.result
+}

@@ -18,7 +18,7 @@ resource "azurerm_mysql_flexible_server" "mysql_flexible_server" {
   resource_group_name    = azurerm_resource_group.resource_group.name
   location               = azurerm_resource_group.resource_group.location
   administrator_login    = var.mysql_admin_username
-  administrator_password = random_password.mysql_admin_password.result
+  administrator_password = azurerm_key_vault.key_vault_secret.database_admin_password.value
   backup_retention_days  = var.mysql_backup_retention_days
   version                = "8.4"
   sku_name               = "B_Standard_B1ms"
